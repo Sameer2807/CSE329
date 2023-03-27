@@ -1,0 +1,37 @@
+//k-jagged number
+
+#include <iostream>
+using namespace std;
+//finding smallest divisor
+int smallestDivisor(int n)
+{
+// if divisible by 2
+if (n % 2 == 0)
+return 2;
+
+// iterate from 3 to sqrt(n)
+for (int i = 3; i * i <= n; i += 2) {
+if (n % i == 0)
+return i;
+}
+
+return n;
+}
+
+
+int main()
+{
+int n, k;
+cin>>n; //input1 for number
+cin>>k; //input2 for k
+if(k>=smallestDivisor(n))
+{
+cout<<"This is k-jagged number";
+}
+else
+{
+cout<<"This is not k-jagged number";
+}
+
+return 0;
+}
